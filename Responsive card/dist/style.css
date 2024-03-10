@@ -1,0 +1,185 @@
+body {
+  margin: 23px;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 15.5px;
+  background-image: url(./bgs/bla.jpg);
+  padding: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+  grid-auto-rows: 200px;
+  grid-auto-flow: row dense;
+  grid-gap: 23px;
+  justify-content: center;
+}
+
+.card-top, .card-right, .card-bottom, .card-left {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: -15px 17px 17px  rgba(10, 10, 10, 0.25);
+  background: rgba(255, 255,255, 0.1);
+  z-index: 10;
+  position: relative;
+  border: 2px solid rgb(255, 255, 255,0.7);
+  backdrop-filter: blur(25px);
+
+}
+
+.card-top {
+  flex-direction: column;
+  grid-column: auto/span 1;
+  grid-row: auto/span 2;
+}
+
+.card-right {
+  flex-direction: row-reverse;
+  grid-column: auto/span 2;
+  grid-row: auto/span 1;
+}
+
+.card-bottom {
+  flex-direction: column-reverse;
+  grid-column: auto/span 1;
+  grid-row: auto/span 2;
+}
+
+.card-left {
+  flex-direction: row;
+  grid-column: auto/span 2;
+  grid-row: auto/span 1;
+}
+
+.card-image {
+  display: flex;
+}
+
+.card-top .card-image, .card-bottom .card-image {
+  height: 50%;
+  width: 100%;
+}
+
+.card-left .card-image, .card-right .card-image {
+  height: 100%;
+  width: 50%;
+}
+
+.card-image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-top img {
+  border-radius: 20px;
+}
+
+.card-right img {
+  border-radius:  20px ;
+}
+
+.card-bottom img {
+  border-radius : 20px;
+}
+
+.card-left img {
+  border-radius: 20px;
+}
+
+.card-text {
+  align-self: center;
+  padding: 23px;
+}
+
+.card-top .card-text {
+  height: auto;
+  width: auto;
+  padding-bottom: 36.8px;
+}
+
+.card-right .card-text {
+  height: auto;
+  width: 50%;
+  padding-left: 36.8px;
+}
+
+.card-bottom .card-text {
+  height: auto;
+  width: auto;
+  padding-top: 36.8px;
+}
+
+.card-left .card-text {
+  height: auto;
+  width: 50%;
+  padding-right: 36.8px;
+}
+
+.card-text p {
+  margin: 0;
+  line-height: 1.35em;
+  color: #fcfcfc;
+}
+.card-text h3{
+  margin: 0;
+  color:aqua;
+}
+@media (max-width: 500px) {
+  .card-top {
+    flex-direction: row;
+    grid-column: auto/span 2;
+    grid-row: auto/span 1;
+  }
+
+  .card-bottom {
+    flex-direction: row-reverse;
+    grid-column: auto/span 2;
+    grid-row: auto/span 1;
+  }
+
+  .card-top .card-image, .card-bottom .card-image {
+    height: 100%;
+    width: 50%;
+  }
+
+  .card-top img {
+    border-radius: 20px;
+  }
+
+  .card-bottom img {
+    border-radius: 20px;
+  }
+
+  .card-top .card-text {
+    height: auto;
+    width: 50%;
+    padding-right: 36.8px;
+  }
+
+  .card-bottom .card-text {
+    height: auto;
+    width: 50%;
+    padding-left: 36.8px;
+  }
+}
+@media (max-width: 400px) {
+  .card-image {
+    width: 38% !important;
+  }
+
+  .card-text {
+    width: 62% !important;
+  }
+}
